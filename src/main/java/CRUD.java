@@ -36,11 +36,10 @@ public class CRUD {
 
         if (connection != null) {
             try {
-                PreparedStatement preparedStatement = connection.prepareStatement("insert into social_network_mikheil_ghibradze.user(id,full_name,birth_date,friends_count) values(?,?,?,?)");
-                preparedStatement.setInt(1,1); //aq 1 vamateb magram mere vshli
-                preparedStatement.setString(2, "Mikheil Ghibradze");
-                preparedStatement.setDate(3, new java.sql.Date(2021, 02, 19));
-                preparedStatement.setString(4, "100");
+                PreparedStatement preparedStatement = connection.prepareStatement("insert into social_network_mikheil_ghibradze.user(full_name,birth_date,friends_count) values(?,?,?)");
+                preparedStatement.setString(1, "Mikheil Ghibradze");
+                preparedStatement.setDate(2, new java.sql.Date(2021, 02, 19));
+                preparedStatement.setString(3, "100");
                 int rowsEffected = preparedStatement.executeUpdate();
 
                 if (rowsEffected < 1) {
